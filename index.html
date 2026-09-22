@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ Quick English - 快速学英语</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Header -->
+        <header>
+            <h1>⚡ Quick English</h1>
+            <p>Learn English fast — 中英对照，高效记忆</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="tabs">
+            <button class="tab-btn active" data-section="vocab">📚 单词闪卡 / Flashcards</button>
+            <button class="tab-btn" data-section="quiz">🎯 快速测验 / Quick Quiz</button>
+            <button class="tab-btn" data-section="daily">📅 每日一句 / Daily Sentence</button>
+        </nav>
+
+        <!-- Flashcards Section -->
+        <section id="section-vocab" class="section active">
+            <div class="flashcard" id="flashcard">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <span class="hint">点击翻转 / Click to flip</span>
+                        <h2 id="word-en">Serendipity</h2>
+                        <p id="word-phonetic">/ˌser.ənˈdɪp.ə.ti/</p>
+                    </div>
+                    <div class="card-back">
+                        <h3 id="word-cn">意外发现美好事物的能力</h3>
+                        <p id="word-def">The occurrence of events by chance in a happy way.</p>
+                        <p class="example" id="word-example">"Meeting you was pure serendipity."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-controls">
+                <button onclick="prevCard()">← 上一个 / Prev</button>
+                <button onclick="nextCard()">下一个 / Next →</button>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="section-quiz" class="section">
+            <div class="quiz-box">
+                <div class="quiz-header">
+                    <span class="badge">Question <span id="q-num">1</span>/5</span>
+                    <span class="score">Score: <span id="score">0</span></span>
+                </div>
+                <p class="quiz-question" id="quiz-question">"Break a leg" 是什么意思？ / What does "Break a leg" mean?</p>
+                <div class="quiz-options" id="quiz-options">
+                    <button class="quiz-btn" data-index="0">A. 真的摔断腿 / Actually break a leg</button>
+                    <button class="quiz-btn" data-index="1">B. 祝好运 / Good luck</button>
+                    <button class="quiz-btn" data-index="2">C. 休息一下 / Take a break</button>
+                </div>
+                <div id="quiz-feedback" class="feedback hidden"></div>
+                <button id="next-btn" class="next-btn hidden" onclick="nextQuestion()">下一题 / Next →</button>
+            </div>
+        </section>
+
+        <!-- Daily Sentence Section -->
+        <section id="section-daily" class="section">
+            <div class="daily-box">
+                <div class="emoji">🌟</div>
+                <p class="sentence-cn" id="sentence-cn">种一棵树最好的时间是十年前，其次是现在。</p>
+                <p class="sentence-en" id="sentence-en">The best time to plant a tree was 20 years ago. The second best time is now.</p>
+                <div class="tags" id="sentence-tags">
+                    <span class="tag">📝 语法：比较级 / Comparative</span>
+                    <span class="tag">💡 主题：励志 / Motivation</span>
+                </div>
+                <button class="new-btn" onclick="newSentence()">换一句 / New Sentence</button>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>重点词汇 / Key Vocab</h4>
+                    <p id="vocab-info">plant (v.) 种植 / to put seeds in the ground</p>
+                </div>
+                <div class="info-card">
+                    <h4>句型结构 / Structure</h4>
+                    <p id="structure-info">The best time to... was... The second best time is...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>💡 小贴士：每天坚持 15 分钟，进步看得见！ / Tip: 15 minutes daily makes a difference!</p>
+        </footer>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
